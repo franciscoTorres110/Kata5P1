@@ -9,6 +9,15 @@ public class Kata5P1 {
         app.selectAll();
         
         CrearTabla.createNewTable();
+        
+        MailListReader m = new MailListReader();
+        List<String> mailList = m.read("email.txt");
+        
+        InsertarDatosTabla idt = new InsertarDatosTabla();
+        // Inserto toda la lista del archivo emails
+        for (int i = 0; i <= mailList.size() - 1; i++) {
+            idt.insert(mailList.get(i));
+        }
     }
 
 }
